@@ -39,7 +39,7 @@
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 nav.navbar {
-  padding-top: 60px;
+  padding-bottom: 0 !important;
 }
 nav.navbar .navbar-links {
   -moz-column-gap: 30px;
@@ -71,7 +71,7 @@ nav.navbar .navbar-links .dropdown .nav-link::after {
   border: none;
 }
 
-.btn-master, .btn-secondary, .btn-primary {
+.btn-master, .btn-light, .btn-secondary, .btn-primary {
   padding: 16px 28px;
   font-weight: 600;
   border: none;
@@ -79,6 +79,7 @@ nav.navbar .navbar-links .dropdown .nav-link::after {
   min-width: -moz-max-content;
   min-width: max-content;
   border-radius: 12px;
+  text-align: center;
 }
 
 .btn-primary {
@@ -99,6 +100,19 @@ nav.navbar .navbar-links .dropdown .nav-link::after {
   background-color: #FDC886;
 }
 
+.btn-light {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #F2F2F2;
+  color: #656565;
+}
+.btn-light:hover {
+  background-color: #F2F2F2;
+  color: #656565;
+}
+
 * {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -108,6 +122,15 @@ body {
   background-color: #FAFAFA;
 }
 
+.container-landing {
+  max-width: 1440px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin: 0 auto;
+}
+
 .row::before,
 .row::after,
 .d-flex::before,
@@ -115,10 +138,56 @@ body {
   display: none !important;
 }
 
+.card-details {
+  padding: 24px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  border-radius: 24px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.card-details .properties {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.card-details .properties .star-rating {
+  align-items: center;
+}
+.card-details .properties .star-rating .rating-point,
+.card-details .properties .star-rating .rating-amount {
+  font-size: 16px;
+  margin-top: 2px;
+}
+.card-details .properties .resto-name {
+  font-size: 18px;
+  color: #232631;
+  font-weight: 600;
+}
+.card-details .btn-secondary {
+  padding: 6px;
+}
+.card-details .btn-secondary img {
+  width: 36px;
+  height: 36px;
+}
+
 .max-w-max {
   max-width: -webkit-max-content;
   max-width: -moz-max-content;
   max-width: max-content;
+}
+
+.transition-all, .expert-chef .top-chef-list .chef-list-wrapper .chef-card:hover, .expert-chef .top-chef-list .chef-list-wrapper .chef-card .btn-link, .most-popular .gallery-popular .gallery-item .card-details-popular, .most-popular .gallery-popular .gallery-item, .hero .hero-content.is-selected .card-resto-details, .hero .hero-content {
+  transition: all ease-in-out 0.3s;
+}
+
+.dropdown .dropdown-toggle::after {
+  content: url("../assets/svgs/chevron_down-gray-sm.svg");
+  border: none;
+  margin-bottom: 5px;
 }
 
 .search-form-control {
@@ -140,6 +209,54 @@ body {
   border: none;
 }
 
+.btn-secondary.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 18px;
+  color: #656565;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 6px;
+       column-gap: 6px;
+  font-size: 16px;
+  color: #656565;
+}
+
+.star-rating {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.star-rating .rating-point {
+  font-weight: 600;
+  color: #FFB800;
+  font-size: 18px;
+}
+.star-rating .rating-amount {
+  font-weight: 400;
+  color: #656565;
+}
+
+.btn-link {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #FDC886;
+  font-weight: 600;
+  text-decoration: none;
+}
+.btn-link:hover {
+  color: #FFB800;
+}
+
 .hero {
   padding-top: 60px;
   padding-bottom: 60px;
@@ -149,7 +266,9 @@ body {
   height: 564px;
   width: 92%;
   margin-right: 40px;
-  transition: all;
+}
+.hero .hero-content .card-resto-details {
+  opacity: 0;
 }
 .hero .hero-content img.resto-image {
   border-radius: 24px;
@@ -160,7 +279,6 @@ body {
 }
 .hero .hero-content.is-selected {
   padding-left: 80px;
-  margin-right: 0;
 }
 .hero .hero-content.is-selected .card-resto-details {
   opacity: 1;
@@ -176,37 +294,10 @@ body {
   left: 0;
   transform: translateY(-50%);
 }
-.hero .hero-content.is-selected .card-resto-details .star-rating {
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
-}
-.hero .hero-content.is-selected .card-resto-details .star-rating .rating-point {
-  font-weight: 600;
-  color: #FFB800;
-  font-size: 18px;
-}
-.hero .hero-content.is-selected .card-resto-details .star-rating .rating-amount {
-  font-weight: 400;
-  color: #656565;
-}
 .hero .hero-content.is-selected .card-resto-details .resto-name {
   font-weight: 600;
   font-size: 22px;
   color: #232631;
-}
-.hero .hero-content.is-selected .card-resto-details .price {
-  font-weight: 600;
-  font-size: 18px;
-  color: #656565;
-}
-.hero .hero-content.is-selected .card-resto-details .location {
-  display: flex;
-  align-items: center;
-  -moz-column-gap: 6px;
-       column-gap: 6px;
-  font-size: 16px;
-  color: #656565;
 }
 .hero .hero-content.is-selected .card-resto-details button {
   max-width: 226px;
@@ -222,4 +313,276 @@ body {
 }
 .hero .hero-content.is-selected .card-resto-details .resto-note img {
   margin-right: 6px;
+}
+
+.section-header .subtitle {
+  color: #5A4FCF;
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.section-header .title {
+  font-weight: 600;
+  font-size: 28px;
+  text-transform: capitalize;
+}
+.section-header .caption {
+  color: #656565;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+.why-us {
+  color: #232631;
+}
+.why-us .container-card-benefits {
+  margin-top: 41px;
+}
+.why-us .container-card-benefits .col {
+  padding: 0 10px;
+}
+.why-us .container-card-benefits .card-benefit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 24px;
+  padding: 24px;
+  background-color: #ffffff;
+  min-height: 347px;
+  position: relative;
+}
+.why-us .container-card-benefits .card-benefit .ic-benefit {
+  margin-bottom: 24px;
+}
+.why-us .container-card-benefits .card-benefit .title {
+  font-weight: 600;
+  font-size: 18px;
+  color: #232631;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.why-us .container-card-benefits .card-benefit p {
+  color: #656565;
+  text-align: center;
+  font-size: 16px;
+}
+.why-us .container-card-benefits .card-benefit .btn-secondary {
+  border-radius: 12px 12px 24px 24px;
+  padding: 24px;
+  margin-top: auto;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: transparent;
+}
+.why-us .container-card-benefits .card-benefit:hover .btn-secondary {
+  background-color: #FDC886;
+}
+
+.most-popular {
+  display: flex;
+  align-items: center;
+}
+.most-popular .details {
+  max-width: 367px;
+  margin-right: 85px;
+}
+.most-popular .details .title {
+  margin-top: 6px;
+}
+.most-popular .details .caption {
+  margin-top: 20px;
+  padding-right: 17px;
+}
+.most-popular .details .btn-secondary {
+  margin-top: 56px;
+}
+.most-popular .gallery-popular {
+  display: flex;
+  gap: 20px;
+  overflow-x: hidden;
+}
+.most-popular .gallery-popular .gallery-item {
+  min-width: 130px;
+  height: 475px;
+  width: 214px;
+  position: relative;
+}
+.most-popular .gallery-popular .gallery-item:hover {
+  width: 400px;
+}
+.most-popular .gallery-popular .gallery-item img.thumbnail {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.most-popular .gallery-popular .gallery-item .card-details-popular {
+  padding: 24px;
+  position: absolute;
+  z-index: 20;
+  opacity: 0;
+  bottom: 0;
+  width: 100%;
+  visibility: hidden;
+  overflow: hidden;
+}
+@media screen and (min-width: 1200px) {
+  .most-popular .gallery-popular .gallery-item .card-details-popular {
+    min-width: 350px;
+  }
+}
+.most-popular .gallery-popular .gallery-item:hover .card-details-popular {
+  visibility: visible;
+  opacity: 1;
+}
+
+.resto-near-me .gallery-near-me {
+  margin-top: 34px;
+}
+.resto-near-me .gallery-near-me .col {
+  padding: 0 10px;
+  overflow: hidden;
+}
+.resto-near-me .gallery-near-me .col .thumbnail-nearby-resto {
+  width: 100%;
+  height: 415px;
+}
+.resto-near-me .gallery-near-me .col .thumbnail-nearby-resto .cover-img {
+  width: 427px;
+  border-radius: 24px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.resto-near-me .gallery-near-me .col .thumbnail-nearby-resto .card-details {
+  position: absolute;
+  z-index: 20;
+  bottom: 24px;
+  width: 379px;
+}
+
+.expert-chef {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 104px;
+  padding-bottom: 120px;
+}
+.expert-chef .chef-detail {
+  padding-left: 60px;
+  max-height: 100%;
+  height: 848px;
+  width: 100%;
+  position: relative;
+}
+.expert-chef .chef-detail .photo {
+  height: 100%;
+  border-radius: 24px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.expert-chef .chef-detail .chef-restaurant {
+  position: absolute;
+  bottom: 40px;
+  left: 0px;
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: -8px 8px 25px rgba(102, 102, 102, 0.04);
+}
+.expert-chef .chef-detail .chef-restaurant .resto-photo {
+  border-radius: 12px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 96px;
+  height: 132px;
+}
+.expert-chef .chef-detail .chef-restaurant div span {
+  font-size: 16px;
+  font-weight: 400;
+  color: #656565;
+  margin-bottom: 4px;
+}
+.expert-chef .chef-detail .chef-restaurant div p {
+  margin-bottom: 0;
+  color: #232631;
+  font-size: 18px;
+  font-weight: 600;
+}
+.expert-chef .chef-detail .experience-card {
+  position: absolute;
+  top: 40px;
+  right: -40px;
+  box-shadow: 8px 8px 25px rgba(102, 102, 102, 0.04);
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 30px 46px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.expert-chef .chef-detail .experience-card img {
+  width: 80px;
+  height: 80px;
+}
+.expert-chef .chef-detail .experience-card .years {
+  font-weight: 600;
+  font-size: 18px;
+  color: #232631;
+}
+.expert-chef .chef-detail .experience-card p {
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 16px;
+  color: #656565;
+}
+.expert-chef .top-chef-list {
+  width: 100%;
+}
+.expert-chef .top-chef-list .chef-list-wrapper {
+  margin: 32px 0 62px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 596px;
+  width: 100%;
+}
+.expert-chef .top-chef-list .chef-list-wrapper .chef-card {
+  padding: 24px;
+  border-radius: 24px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+}
+.expert-chef .top-chef-list .chef-list-wrapper .chef-card .food-name,
+.expert-chef .top-chef-list .chef-list-wrapper .chef-card .location {
+  font-size: 16px;
+  color: #656565;
+}
+.expert-chef .top-chef-list .chef-list-wrapper .chef-card .food-name {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.expert-chef .top-chef-list .chef-list-wrapper .chef-card .restaurant-name {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 6px 0;
+  text-transform: capitalize;
+}
+.expert-chef .top-chef-list .chef-list-wrapper .chef-card .btn-link {
+  font-weight: 500;
+  opacity: 0;
+}
+.expert-chef .top-chef-list .chef-list-wrapper .chef-card:hover {
+  background-color: #ffffff;
+}
+.expert-chef .top-chef-list .chef-list-wrapper .chef-card:hover .btn-link {
+  opacity: 1;
 }/*# sourceMappingURL=main.css.map */

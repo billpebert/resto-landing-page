@@ -13,6 +13,15 @@ body {
     background-color: $page-bg;
 }
 
+.container-landing {
+    max-width: 1440px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin: 0 auto;
+}
+
 .row::before,
 .row::after,
 .d-flex::before,
@@ -20,8 +29,63 @@ body {
     display: none !important;
 }
 
+.card-details {
+    padding: 24px;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    border-radius: 24px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    .properties {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        .star-rating {
+            align-items: center;
+
+            .rating-point,
+            .rating-amount {
+                font-size: 16px;
+                margin-top: 2px;
+            }
+        }
+
+        .resto-name {
+            font-size: 18px;
+            color: $black;
+            font-weight: 600;
+        }
+    }
+
+    .btn-secondary {
+        padding: 6px;
+
+        img {
+            width: 36px;
+            height: 36px;
+        }
+
+    }
+}
+
 .max-w-max {
     max-width: max-content;
+}
+
+.transition-all {
+    transition: all ease-in-out .3s;
+}
+
+.dropdown {
+    .dropdown-toggle::after {
+        content: url('../assets/svgs/chevron_down-gray-sm.svg');
+        border: none;
+        margin-bottom: 5px;
+    }
 }
 
 .search-form-control {
@@ -43,22 +107,57 @@ body {
     border: none;
 }
 
-// ::placeholder {
-//     /* Chrome, Firefox, Opera, Safari 10.1+ */
-//     color: red;
-//     opacity: 1;
-//     /* Firefox */
-// }
+.btn-secondary {
+    &.icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
 
-// :-ms-input-placeholder {
-//     /* Internet Explorer 10-11 */
-//     color: red;
-// }
+.price {
+    font-weight: 600;
+    font-size: 18px;
+    color: $deep-gray;
+}
 
-// ::-ms-input-placeholder {
-//     /* Microsoft Edge */
-//     color: red;
-// }
+.location {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+    font-size: 16px;
+    color: $deep-gray;
+}
+
+.star-rating {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+
+    .rating-point {
+        font-weight: 600;
+        color: $yellow;
+        font-size: 18px;
+    }
+
+    .rating-amount {
+        font-weight: 400;
+        color: $deep-gray;
+    }
+}
+
+.btn-link {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: $yellow-pastel;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+        color: $yellow;
+    }
+}
 
 .hero {
     padding-top: 60px;
@@ -69,7 +168,11 @@ body {
         height: 564px;
         width: 92%;
         margin-right: 40px;
-        transition: all;
+        @extend .transition-all;
+
+        .card-resto-details {
+            opacity: 0;
+        }
 
         img.resto-image {
             border-radius: 24px;
@@ -81,7 +184,6 @@ body {
 
         &.is-selected {
             padding-left: 80px;
-            margin-right: 0;
 
             .card-resto-details {
                 opacity: 1;
@@ -92,47 +194,17 @@ body {
                 background-color: $white;
                 padding: 25px 24px 24px;
                 width: 390px;
+                @extend .transition-all;
 
                 position: absolute;
                 top: 50%;
                 left: 0;
                 transform: translateY(-50%);
 
-                .star-rating {
-                    display: flex;
-                    align-items: baseline;
-                    gap: 4px;
-
-                    .rating-point {
-                        font-weight: 600;
-                        color: $yellow;
-                        font-size: 18px;
-                    }
-
-                    .rating-amount {
-                        font-weight: 400;
-                        color: $deep-gray;
-                    }
-                }
-
                 .resto-name {
                     font-weight: 600;
                     font-size: 22px;
                     color: $black;
-                }
-
-                .price {
-                    font-weight: 600;
-                    font-size: 18px;
-                    color: $deep-gray;
-                }
-
-                .location {
-                    display: flex;
-                    align-items: center;
-                    column-gap: 6px;
-                    font-size: 16px;
-                    color: $deep-gray;
                 }
 
                 button {
@@ -154,6 +226,348 @@ body {
                 }
             }
         }
+
+    }
+}
+
+.section-header {
+
+    .subtitle {
+        color: $purple;
+        font-weight: 600;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+    }
+
+    .title {
+        font-weight: 600;
+        font-size: 28px;
+        text-transform: capitalize;
+    }
+
+    .caption {
+        color: $deep-gray;
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+
+}
+
+.why-us {
+    color: $black;
+
+    .container-card-benefits {
+        margin-top: 41px;
+
+        .col {
+            padding: 0 10px;
+        }
+
+        .card-benefit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 24px;
+            padding: 24px;
+            background-color: $white;
+            min-height: 347px;
+            position: relative;
+
+            .ic-benefit {
+                margin-bottom: 24px;
+            }
+
+            .title {
+                font-weight: 600;
+                font-size: 18px;
+                color: $black;
+                margin-bottom: 12px;
+                text-align: center;
+            }
+
+            p {
+                color: $deep-gray;
+                // margin-bottom: 12px;
+                text-align: center;
+                font-size: 16px;
+            }
+
+            .btn-secondary {
+                border-radius: 12px 12px 24px 24px;
+                padding: 24px;
+                margin-top: auto;
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                background-color: transparent;
+            }
+
+            &:hover {
+                .btn-secondary {
+                    background-color: $yellow-pastel;
+                }
+            }
+        }
+    }
+}
+
+.most-popular {
+    display: flex;
+    // flex-wrap: wrap;
+    align-items: center;
+    // justify-content: space-between;
+
+    .details {
+        // min-width: 367px;
+        max-width: 367px;
+        margin-right: 85px;
+
+        .title {
+            margin-top: 6px;
+        }
+
+        .caption {
+            margin-top: 20px;
+            padding-right: 17px;
+        }
+
+        .btn-secondary {
+            margin-top: 56px;
+        }
+    }
+
+    .gallery-popular {
+        display: flex;
+        gap: 20px;
+        overflow-x: hidden;
+
+        .gallery-item {
+            min-width: 130px;
+            height: 475px;
+            width: 214px;
+            position: relative;
+            @extend .transition-all;
+
+            &:hover {
+                width: 400px;
+            }
+
+            img.thumbnail {
+                width: 100%;
+                height: 100%;
+                border-radius: 24px;
+                object-fit: cover;
+            }
+
+            .card-details-popular {
+                padding: 24px;
+                position: absolute;
+                z-index: 20;
+                opacity: 0;
+                @extend .transition-all;
+                bottom: 0;
+                width: 100%;
+                visibility: hidden;
+                overflow: hidden;
+
+                @media screen and (min-width: 1200px) {
+                    min-width: 350px;
+                }
+            }
+
+
+            &:hover {
+                .card-details-popular {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.resto-near-me {
+    .gallery-near-me {
+        margin-top: 34px;
+
+        .col {
+            padding: 0 10px;
+            overflow: hidden;
+
+            .thumbnail-nearby-resto {
+                width: 100%;
+                height: 415px;
+
+                .cover-img {
+                    width: 427px;
+                    border-radius: 24px;
+                    object-fit: cover;
+                }
+
+                .card-details {
+                    position: absolute;
+                    z-index: 20;
+                    bottom: 24px;
+                    width: 379px;
+                }
+            }
+
+        }
+    }
+}
+
+.expert-chef {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // width: max-content;
+    gap: 104px;
+    padding-bottom: 120px;
+
+    .chef-detail {
+        padding-left: 60px;
+        max-height: 100%;
+        height: 848px;
+        width: 100%;
+        position: relative;
+        // width: 565px;
+
+        .photo {
+            height: 100%;
+            border-radius: 24px;
+            object-fit: cover;
+        }
+
+        .chef-restaurant {
+            position: absolute;
+            bottom: 40px;
+            left: 0px;
+            background-color: $white;
+            border-radius: 24px;
+            padding: 24px;
+
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: -8px 8px 25px rgba(102, 102, 102, 0.04);
+
+            .resto-photo {
+                border-radius: 12px;
+                object-fit: cover;
+                width: 96px;
+                height: 132px;
+            }
+
+            div {
+                span {
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: $deep-gray;
+                    margin-bottom: 4px;
+                }
+
+                p {
+                    margin-bottom: 0;
+                    color: $black;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+
+
+            }
+        }
+
+        .experience-card {
+            position: absolute;
+            top: 40px;
+            right: -40px;
+            box-shadow: 8px 8px 25px rgba(102, 102, 102, 0.04);
+
+            background-color: $white;
+            border-radius: 24px;
+            padding: 30px 46px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .years {
+                font-weight: 600;
+                font-size: 18px;
+                color: $black;
+            }
+
+            p {
+                margin-bottom: 0;
+                font-weight: 400;
+                font-size: 16px;
+                color: $deep-gray;
+            }
+        }
+    }
+
+    .top-chef-list {
+        width: 100%;
+
+        .chef-list-wrapper {
+            margin: 32px 0 62px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 596px;
+            width: 100%;
+
+            .chef-card {
+                padding: 24px;
+                border-radius: 24px;
+                background-color: transparent;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 16px;
+
+                width: 100%;
+
+                .food-name,
+                .location {
+                    font-size: 16px;
+                    color: $deep-gray;
+                }
+
+                .food-name {
+                    font-weight: 500;
+                    text-transform: uppercase;
+                }
+
+                .restaurant-name {
+                    font-size: 22px;
+                    font-weight: 600;
+                    margin: 6px 0;
+                    text-transform: capitalize;
+                }
+
+                .btn-link {
+                    @extend .transition-all;
+                    font-weight: 500;
+                    opacity: 0;
+                }
+
+                &:hover {
+                    @extend .transition-all;
+                    background-color: $white;
+
+                    .btn-link {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
 
     }
 }

@@ -4,7 +4,7 @@
     border: none;
     min-width: max-content;
     border-radius: 12px;
-
+    text-align: center;
 }
 
 .btn-primary {
@@ -27,5 +27,20 @@
         color: $black;
         background-color: $yellow-pastel;
 
+    }
+}
+
+.btn-light {
+    @extend .btn-master;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #F2F2F2;
+    color: $deep-gray;
+
+    &:hover {
+        background-color: #F2F2F2;
+        color: $deep-gray;
     }
 }
