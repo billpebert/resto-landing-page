@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/css/bootstrap.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="sass/main.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="src/vendor/flickity/flickity.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg container-xxl">
+        <div class="container-fluid">
+            <a href="#" class="d-block d-lg-none">
+                <img src="assets/svgs/logo.svg" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav me-auto navbar-links align-items-baseline">
+                    <a class="nav-link active" aria-current="page" href="#">
+                        Home
+                        <span></span>
+                    </a>
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Category
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Dessert</a></li>
+                            <li><a class="dropdown-item" href="#">Beverage</a></li>
+                            <li><a class="dropdown-item" href="#">Main Course</a></li>
+                        </ul>
+                    </div>
+                    <a class="nav-link" href="#">
+                        Services
+                        <span></span>
+                    </a>
+                    <a class="nav-link" href="#">
+                        About us
+                        <span></span>
+                    </a>
+                </div>
+                <div class="navbar-nav d-lg-block d-none">
+                    <a href="#">
+                        <img src="assets/svgs/logo.svg" alt="">
+                    </a>
+                </div>
+                <div class="navbar-nav ms-auto">
+                    <div class="d-flex align-items-center gap-3">
+                        <input type="text" class="me-1 form-control search-form-control"
+                            placeholder="Search your favorite food">
+                        <a href="#" class="btn btn-primary">Log In</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero container-xxl">
+        <div class="hero-slider">
+            <div class="hero-content">
+                <img src="assets/images/hero-1.webp" class="resto-image" alt="">
+                <div class="card-resto-details">
+                    <div class="star-rating">
+                        <img src="assets/svgs/star.svg" alt="">
+                        <img src="assets/svgs/star.svg" alt="">
+                        <img src="assets/svgs/star.svg" alt="">
+                        <img src="assets/svgs/star.svg" alt="">
+                        <img src="assets/svgs/star.svg" alt="">
+                        <span class="rating-point">5.0</span>
+                        <span class="rating-amount">(5.2K+)</span>
+                    </div>
+                    <div class="resto-name">
+                        Padang Restaurant
+                    </div>
+                    <div class="price">
+                        IDR 49.999 - IDR 560.000
+                    </div>
+                    <div class="location">
+                        <img src="assets/svgs/ic_location-grey.svg" alt="">
+                        <span>Padang, Indonesia</span>
+                    </div>
+                    <button class="btn btn-secondary">
+                        Make Reservation
+                        <img src="assets/svgs/chevron_right.svg" alt="">
+                    </button>
+                    <div class="resto-note">
+                        <img src="assets/svgs/ic_exclamation-squircle.svg" alt="">
+                        No extra cost
+                    </div>
+                </div>
+            </div>
+            <div class="hero-content">
+                <img src="assets/images/hero-2.webp" class="resto-image" alt="">
+                <div class="card-resto-details">
+                    <div class="star-rating">
+                        <img src="assets/svgs/star.svg" alt="">
+                        <img src="assets/svgs/star.svg" alt="">
+                        <img src="assets/svgs/star.svg" alt="">
+                        <img src="assets/svgs/star.svg" alt="">
+                        <img src="assets/svgs/star.svg" alt="">
+                        <span class="rating-point">5.0</span>
+                        <span class="rating-amount">(5.2K+)</span>
+                    </div>
+                    <div class="resto-name">
+                        Padang Restaurant
+                    </div>
+                    <div class="price">
+                        IDR 49.999 - IDR 560.000
+                    </div>
+                    <div class="location">
+                        <img src="assets/svgs/ic_location-grey.svg" alt="">
+                        <span>Padang, Indonesia</span>
+                    </div>
+                    <button class="btn btn-secondary">
+                        Make Reservation
+                        <img src="assets/svgs/chevron_right.svg" alt="">
+                    </button>
+                    <div class="resto-note">
+                        <img src="assets/svgs/ic_exclamation-squircle.svg" alt="">
+                        No extra cost
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="src/vendor/jquery/jquery-3.6.0.min.js"></script>
+    <script src="src/js/bootstrap.bundle.js"></script>
+    <script src="src/vendor/flickity/flickity.min.js"></script>
+    <script>
+        $('.hero-slider').flickity({
+            // options
+            cellAlign: 'left',
+            contain: true,
+            pageDots: false,
+            prevNextButtons: false,
+        });
+    </script>
+</body>
+
+</html>

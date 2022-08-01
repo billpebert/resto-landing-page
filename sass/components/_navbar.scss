@@ -1,0 +1,36 @@
+nav.navbar {
+    padding-top: 60px;
+
+    .navbar-links {
+        column-gap: 30px;
+
+        .nav-link {
+            font-weight: 500;
+            font-size: 16px;
+            max-width: max-content;
+            color: $black;
+
+            &.active {
+                position: relative;
+
+                span {
+                    background-color: $purple;
+                    width: 70%;
+                    height: 2px;
+                    border-radius: 2px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+
+        .dropdown {
+            .nav-link::after {
+                content: url('../../assets/svgs/chevron_down-sm.svg');
+                border: none;
+            }
+        }
+    }
+}
