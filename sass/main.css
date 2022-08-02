@@ -48,9 +48,9 @@ nav.navbar .navbar-links {
 nav.navbar .navbar-links .nav-link {
   font-weight: 500;
   font-size: 16px;
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   color: #232631;
 }
 nav.navbar .navbar-links .nav-link.active {
