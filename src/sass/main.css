@@ -185,7 +185,7 @@ body {
 }
 
 .dropdown .dropdown-toggle::after {
-  content: url("../assets/svgs/chevron_down-gray-sm.svg");
+  content: url("../../assets/svgs/chevron_down-gray-sm.svg");
   border: none;
   margin-bottom: 5px;
 }
@@ -200,7 +200,7 @@ body {
   border: none;
   background-color: #ffffff;
   border-radius: 12px;
-  background-image: url("../assets/svgs/ic_search.svg");
+  background-image: url("../../assets/svgs/ic_search.svg");
   background-position: 28px center;
   background-repeat: no-repeat;
 }
