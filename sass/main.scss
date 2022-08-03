@@ -348,8 +348,13 @@ body {
             position: relative;
             @extend .transition-all;
 
-            &:hover {
+            &.is-hover {
                 width: 400px;
+
+                .card-details-popular {
+                    visibility: visible;
+                    opacity: 1;
+                }
             }
 
             img.thumbnail {
@@ -375,13 +380,16 @@ body {
                 }
             }
 
+            // State hover sebelum menggunakan Js
+            // &:hover {
+            //     width: 400px;
 
-            &:hover {
-                .card-details-popular {
-                    visibility: visible;
-                    opacity: 1;
-                }
-            }
+            //     .card-details-popular {
+            //         visibility: visible;
+            //         opacity: 1;
+            //     }
+            // }
+
         }
     }
 }

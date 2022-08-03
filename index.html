@@ -237,7 +237,7 @@
         </div>
         <div class="gallery-popular">
             <!-- Gallery 1 -->
-            <div class="gallery-item">
+            <div class="gallery-item is-hover">
                 <img src="assets/images/gallery01.webp" alt="" class="thumbnail">
                 <div class="card-details-popular">
                     <div class="card-details">
@@ -561,6 +561,16 @@
             pageDots: false,
             prevNextButtons: false,
         });
+
+        $('.gallery-item').mouseenter(function (e) {
+            $('.gallery-item').removeClass('is-hover')
+            var element = e.currentTarget
+            element.classList.add("is-hover")
+        }).mouseleave(function (e) {
+            $('.gallery-item').removeClass('is-hover')
+            var firstGallery = $('.gallery-popular').children()[0]
+            firstGallery.classList.add('is-hover')
+        })
     </script>
 </body>
 

@@ -408,8 +408,12 @@ body {
   width: 214px;
   position: relative;
 }
-.most-popular .gallery-popular .gallery-item:hover {
+.most-popular .gallery-popular .gallery-item.is-hover {
   width: 400px;
+}
+.most-popular .gallery-popular .gallery-item.is-hover .card-details-popular {
+  visibility: visible;
+  opacity: 1;
 }
 .most-popular .gallery-popular .gallery-item img.thumbnail {
   width: 100%;
@@ -432,10 +436,6 @@ body {
   .most-popular .gallery-popular .gallery-item .card-details-popular {
     min-width: 350px;
   }
-}
-.most-popular .gallery-popular .gallery-item:hover .card-details-popular {
-  visibility: visible;
-  opacity: 1;
 }
 
 .resto-near-me .gallery-near-me {
