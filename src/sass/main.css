@@ -407,6 +407,7 @@ body {
   height: 475px;
   width: 214px;
   position: relative;
+  overflow: hidden;
 }
 .most-popular .gallery-popular .gallery-item.is-hover {
   width: 400px;
