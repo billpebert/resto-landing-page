@@ -507,6 +507,7 @@ body {
   font-weight: 400;
   color: #656565;
   margin-bottom: 4px;
+  padding-right: 23px;
 }
 .expert-chef .chef-detail .chef-restaurant div p {
   margin-bottom: 0;
@@ -525,6 +526,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  align-items: center;
 }
 .expert-chef .chef-detail .experience-card img {
   width: 80px;
@@ -534,15 +536,23 @@ body {
   font-weight: 600;
   font-size: 18px;
   color: #232631;
+  text-align: center;
 }
 .expert-chef .chef-detail .experience-card p {
   margin-bottom: 0;
   font-weight: 400;
   font-size: 16px;
   color: #656565;
+  text-align: center;
 }
 .expert-chef .top-chef-list {
   width: 100%;
+}
+.expert-chef .top-chef-list .section-header .subtitle {
+  font-size: 18px;
+}
+.expert-chef .top-chef-list .section-header .title {
+  font-size: 32px;
 }
 .expert-chef .top-chef-list .chef-list-wrapper {
   margin: 32px 0 62px;
